@@ -1,0 +1,45 @@
+<html>
+<head>
+ <style>
+    #panel { 
+    padding: 50px; 
+    text-align: center;
+    background-color: #ffffff; 
+    } 
+    </style>
+</head>
+
+<body>
+     <div id="content">
+	  <p>
+      <span>Todos:</span>
+      <ul id="todo-list">
+      </ul>
+	  </p>
+
+	  <p>
+      <span>Done:</span>
+      <ul id="done-list">
+      </ul>
+	  </p>
+	
+	  <p>	  Remained items:</p>
+	  <span id="counter"></span>
+	  
+	<p>	
+	<input type="text" id="space"/>
+	<input type="button" id="btn" value="Add todo">
+	</p>
+	</div>
+	
+	<p>
+	<div id="panel" ></div>
+	</p>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="func.js"></script>
+
+</html>
