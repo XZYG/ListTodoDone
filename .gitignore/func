@@ -1,0 +1,44 @@
+// COUNTER
+var count = 0;
+$('#counter').text(count);
+
+// INSERT NEW ITEM TODO
+$('#btn').on('click', function(){
+	 var field = $('#space').val();
+if  (field !=''){	 
+	 $('#todo-list').append($('<li>'+field+'</li>'));
+	 var empty = $('#space').val('');
+	 count++;
+        $('#counter').text(count);
+        $("#space").ready(function(){
+         $("#panel").slideUp("fast");
+		 $("#panel").css("color", "white");
+		 $("#panel").css("background-color", "white");
+		 });
+}
+else {
+        $("#space").ready(function(){
+        $("#panel").slideDown("slow");
+		$("#panel").text('Please enter a valid item!');
+		$("#panel").css("background-color", "red");
+    });
+}
+});
+
+// ADD TO DONE-LIST
+$('#todo-list').on('click','li', function(){
+	 var item = $(this).text();	
+	 $('#done-list').append($('<li>'+item+'</li>'));
+	 $(this).hide();
+	 count--;
+	 $('#counter').text(count);
+});
+
+// UNDO DONE-LIST
+$('#done-list').on('click','li', function(){
+	 var item = $(this).text();	
+	 $('#todo-list').append($('<li>'+item+'</li>'));
+	 $(this).hide();
+	 count++;
+	 $('#counter').text(count);
+});
